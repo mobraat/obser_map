@@ -22,10 +22,11 @@
 </head>
 <body>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
-    <!--<script src="/js/leaflet-0.7.2/leaflet.ajax.min.js"></script> -->
-
+  
     <div id="mapid"></div>
    
+     <script src='https://mobraat.github.io/obser_map/src/map.json'></script>
+    <script src="/js/leaflet-0.7.2/leaflet.ajax.min.js"></script>
     <script>
         var mymap = L.map('mapid').setView([ 62.58332647, -114.4500116 ], 13);
 
@@ -36,7 +37,7 @@
             accessToken: 'pk.eyJ1IjoibW9yZ2FuYnJhYXRlbiIsImEiOiJjazVtc216M3cwcmthM29wY2s4NTdiMDZ6In0.jcbsx8PTyrpUTlusureNJg'
 }).addTo(mymap);
 
-
+        
 L.marker([62.58332647, -114.4500116],{}).addTo(mymap);
 
  var bounds = [[ 62.58332647, -114.4500116 ], [ 52.188798, -117.249553 ]]; 
@@ -44,7 +45,8 @@ L.marker([62.58332647, -114.4500116],{}).addTo(mymap);
         color: "#ff7800", weight: 1,}
         ).addTo(mymap);
 
-
+var geojsonLayer = new L.GeoJSON.AJAX("map.json");       
+geojsonLayer.addTo(mymap);
 
 
 //var canData = 

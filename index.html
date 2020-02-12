@@ -48,9 +48,9 @@
 
             
             function forEachFeature(feature, layer) {
-                var popupContent = "<p>Site: </p>"+ feature.properties.Site + "<p><br></p" +
-                                    "<p>Project: </p>" +feature.properities.Project_1 + feature.properities.Project_2 + feature.properities.Project_3 + feature.properities.Project_4 + "<p><br></p>"+
-                                    feature.properties.URL
+                var popupContent = "<p>Site: " + feature.properties.Site + "</br>" +
+                                    "Project: " + feature.properities.Project_1 + feature.properities.Project_2 + feature.properities.Project_3 + feature.properities.Project_4 + "</br>"+
+                                    '<a href=" '+ feature.properties.url + '" target="blank">Website</a></p>'
                                     ;
 
                 if (feature.properties && feature.properties.popupContent) {
